@@ -1,19 +1,19 @@
 #!/bin/bash
 
-function bail_out {
-    echo -e "\033[31;7mThis script supports only Ubuntu 20.04. Terminating.\e[0m"
-    exit 1
-}
+#function bail_out {
+#    echo -e "\033[31;7mThis script supports only Ubuntu 20.04. Terminating.\e[0m"
+#    exit 1
+#}
 
-if ! [ -x "$(command -v lsb_release)" ]; then
-    bail_out
-fi
+#if ! [ -x "$(command -v lsb_release)" ]; then
+#    bail_out
+#fi
 
-if [ $(lsb_release -i -s) != "Ubuntu" ] || [ $(lsb_release -r -s) != "20.04" ]; then 
-    bail_out
-fi
+#if [ $(lsb_release -i -s) != "Ubuntu" ] || [ $(lsb_release -r -s) != "20.04" ]; then 
+#    bail_out
+#fi
 
-export REGION=GB
+export REGION=RU
 export IP=$(curl -s api.ipify.org)
 
 apt-get update
